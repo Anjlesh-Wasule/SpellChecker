@@ -23,12 +23,12 @@ int main() {
     Trie trie;
     readWordsFromFile("wordsFILE.txt", trie);
 
-    std::string input;
-    std::cout << "Enter a word or phrase: ";
-    std::getline(std::cin, input);
+    string input;
+    cout << "Enter a word or phrase: ";
+    getline(cin, input);
 
-    std::string nearestWord = findNearestWord(input, trie);
-    std::cout << "Nearest word: " << nearestWord << std::endl;
+    string nearestWord = findNearestWord(input, trie);
+    cout << "Nearest word: " << nearestWord << endl;
 
     return 0;
 }
