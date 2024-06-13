@@ -16,19 +16,24 @@ Enhance your software applications with a powerful Spell Checker implemented in 
 
 To integrate the Spell Checker into your project, follow these simple steps:
 ```cpp
-#include "SpellChecker.h"
-#include <iostream>
+#include<iostream>
+#include"SpellChecker.h"
+using namespace std;
 
-int main() {
+int main(){
     Trie trie;
-    readWordsFromFile("wordsFILE.txt", trie);
 
-    string input;
-    cout << "Enter a word or phrase: ";
-    getline(cin, input);
+    // Read words from file and insert them into the Trie
+    readWordsFromFile("words.txt", trie);
 
-    string nearestWord = findNearestWord(input, trie);
-    cout << "Nearest word: " << nearestWord << endl;
+    // Get user input
+    string inputWord;
+    cout << "Enter a word to check: ";
+    getline(cin, inputWord); 
+
+    // Find and display the nearest word
+    string nearestWord = findNearestWord(inputWord, trie);
+    cout << "Did you mean: " << nearestWord << "?" << endl;
 
     return 0;
 }
